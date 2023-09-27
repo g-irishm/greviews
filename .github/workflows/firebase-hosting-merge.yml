@@ -11,13 +11,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: echo "moving to folder" cd web-app & echo "moved to folder" & npm i & echo "installed dependencies"
+      - run: echo "moving to folder" 
+      - run: cd web-app
+      - run: echo "moved to folder installing dependencies"
+      - run: npm i
+      - run: echo "installed dependencies"
   deploy:
     needs: build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: echo "Current folder" & pwd & npm run build
+      - run: echo "Current folder" & pwd & cd web-app & npm run build
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
