@@ -1,6 +1,6 @@
 # GReviews
 
-Welcome to the GReviews  Web App repository! This web application allows users to share their reviews on various topics. It's accessible at [www.greviews.xyz](https://www.greviews.xyz).
+Welcome to the GReviews repository! It's accessible at [www.greviews.xyz](https://www.greviews.xyz).
 
 ## Table of Contents
 - [Introduction](#introduction)
