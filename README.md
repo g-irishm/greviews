@@ -23,9 +23,7 @@ Steps to get started with this web app will be published later.
 Once you have the web app up and running, you can use it to:
 
 - Create an account or log in if you already have one.
-- Share your reviews on various topics.
-- Browse and search for reviews on topics that interest you.
-- Interact with other users by commenting on and liking their reviews.
+- Interact with other users.
 - Customize your profile and preferences.
 
 Feel free to explore the app's features and provide feedback or report issues on the [GitHub Issues](https://github.com/g-irishm/greviews/issues) page.
