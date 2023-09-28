@@ -1,6 +1,6 @@
 # GReviews
 
-Welcome to the GReviews repository! It's accessible at [www.greviews.xyz](https://www.greviews.xyz).
+Welcome to the GReviews repository! It's deployed at [www.greviews.xyz](https://www.greviews.xyz).
 
 ## Table of Contents
 - [Introduction](#introduction)
@@ -8,10 +8,11 @@ Welcome to the GReviews repository! It's accessible at [www.greviews.xyz](https:
 - [Usage](#usage)
 - [Contributing](#contributing)
 - [License](#license)
+- [Contact](#contact)
 
 ## Introduction
 
-This repository houses the source code for the Review Sharing Web App, a platform where users can submit and browse reviews on a wide range of subjects. Whether it's a movie, restaurant, product, or any other topic, this app enables users to express their opinions and share them with the community.
+This repository houses the source code for the App. Please await for further updates for a details description.
 
 ## Getting Started
 
@@ -31,7 +32,7 @@ Feel free to explore the app's features and provide feedback or report issues on
 
 ## Contributing
 
-We welcome contributions from the community to help improve and enhance the Review Sharing Web App. If you'd like to contribute, please follow these guidelines:
+We welcome contributions from the community to help improve and enhance the web app. If you'd like to contribute, please follow these guidelines:
 
 1. Fork the repository.
 
@@ -51,4 +52,6 @@ This web app is open-source and available under the [MIT License](LICENSE). You 
 
 For any questions or further information, please contact the owner of this repository.
 
-Happy reviewing!
+## Contact
+
+If you'd like to support or donate for this application or if you have any queries, you can contact the owner of this repo on [LinkedIn](https://www.linkedin.com/in/g-irishm/).
