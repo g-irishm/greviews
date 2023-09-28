@@ -3,4 +3,10 @@ h1 {
     font-family: 'Tourney', cursive;
     font-weight: 300;
     font-size: 15rem;
+
+    @media only screen and (max-width: 600px) {
+        font-size: 12rem;
+        word-wrap: anywhere;
+        margin: 0;
+    }
 }
