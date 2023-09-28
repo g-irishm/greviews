@@ -1,6 +1,6 @@
-# GReviews
+# Greviews
 
-Welcome to the GReviews repository! It's deployed at [www.greviews.xyz](https://www.greviews.xyz).
+Welcome to the Greviews repository! It's deployed at [www.greviews.xyz](https://www.greviews.xyz).
 
 ## Table of Contents
 - [Introduction](#introduction)
