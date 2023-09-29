@@ -23,6 +23,7 @@ jobs:
       - run: mkdir ../public
         working-directory: web-app
   deploy:
+    if: true
     needs: build
     runs-on: ubuntu-latest
     steps:
