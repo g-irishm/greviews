@@ -7,11 +7,19 @@ name: Deploy to Firebase Hosting on merge
     branches:
       - main
 jobs:
-  build:
+  install_dependencies:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - run: npm install -g @angular/cli & npm i
+        working-directory: web-app
+  build:
+    needs: install_dependencies
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: mkdir ../public
+      - run: ng build
         working-directory: web-app
   deploy:
     needs: build
