@@ -20,10 +20,15 @@ This documentation walks through the file structure of the web-app application. 
             |     |     |     - [component].component.ts
             |     |     |     - [component].component.scss
             |     |     |     - [component].component.spec.ts
+            | - forms
+            |   - [form].ts
             | - guards
             |     | - [guard]
             |     |     | - [guard].guard.ts
             |     |     | - [guard].guard.spec.ts
+            | - interfaces
+            |   - [interface]
+            |     |   - [interface].ts
             | - modules
             |     | - [module]
             |     |     - [module].module.ts
@@ -36,6 +41,8 @@ This documentation walks through the file structure of the web-app application. 
             |     | - [service]
             |     |     - [service].service.ts
             |     |     - [service].service.spec.ts
+            | - types
+            |   - [type].ts
 ```
 
 ### src
@@ -53,10 +60,21 @@ This is the directory containing the web app code
 
 - The specific module directory name is the same name as in the `modules` directory. It stores modules specific components which are lazy loaded only when that specific module is loaded.
 
+### forms
+[Angular Documentation Reference]()
+
+- This directory contains all the forms that implement their respective interfaces. These forms are used in storefront inside components to capture user data.
+
 ### guards
 [Angular Documentation Reference](https://angular.io/guide/glossary#route-guard)
 
 This contains the Angular guards which you can find on angular website. The directory contains a sub directory with the guard name which holds the guard files of that particular guard.
+
+### interfaces
+[Typescript Documentation Reference](https://www.typescriptlang.org/docs/handbook/interfaces.html)
+
+- This directory contains all the interfaces that are implemented by different `classes` or `components` in the app. 
+- The forms interface is used to define the specific form elements that will be rendered along with their configurations.
 
 ### modules
 [Angular Documentation Reference](https://angular.io/guide/glossary#module)
@@ -72,3 +90,10 @@ A module is same as an Angular module which you can find documentation on Angula
 The services documentation is the same as Angular service.
 
 - The directory as a sub-directory of the specific `service` which holds the service files.
+
+### types
+[Typescript Documentation Reference](https://www.typescriptlang.org/docs/handbook/advanced-types.html)
+
+- This directory contains all the types that are used across the app.
+- It ensures that the data is transferred between components/network/functions in a specific format.
+- Helps detect compile time errors.
