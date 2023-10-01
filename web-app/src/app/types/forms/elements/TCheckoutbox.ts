@@ -1,4 +1,4 @@
-import { TFormBaseElement } from '../TFormBaseElement';
+import { TBaseElement } from './TBaseElement';
 
 type TCheckboxValue = {
     id: string;
@@ -6,7 +6,7 @@ type TCheckboxValue = {
     displayValue: string;
 };
 
-export type TCheckoutbox = TFormBaseElement & {
+export type TCheckoutbox = TBaseElement & {
     type: 'checkbox';
     values: Array<TCheckboxValue>;
 };

@@ -1,15 +1,20 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginForm } from 'src/app/forms/LoginForm';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+    selector: 'app-login',
+    templateUrl: './login.component.html',
+    styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+    loginForm: LoginForm;
 
-  ngOnInit(): void {
-  }
+    constructor() {
+        this.loginForm = new LoginForm('', '');
+    }
+
+    ngOnInit(): void {
+    }
 
 }

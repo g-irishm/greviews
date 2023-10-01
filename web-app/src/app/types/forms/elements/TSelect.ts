@@ -1,4 +1,4 @@
-import { TFormBaseElement } from '../TFormBaseElement';
+import { TBaseElement } from './TBaseElement';
 
 type TSelectOptions = {
     id: string;
@@ -6,7 +6,7 @@ type TSelectOptions = {
     displayValue: string;
 }
 
-export type TSelect = TFormBaseElement & {
+export type TSelect = TBaseElement & {
     type: 'select';
     placeholder: string;
     options: Array<TSelectOptions>;

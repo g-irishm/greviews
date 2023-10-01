@@ -1,5 +1,5 @@
-import { TFormBaseElement } from '../TFormBaseElement';
+import { TBaseElement } from './TBaseElement';
 
-export type TImage = TFormBaseElement & {
+export type TImage = TBaseElement & {
     type: 'image';
 };

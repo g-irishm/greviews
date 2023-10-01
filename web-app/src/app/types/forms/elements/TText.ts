@@ -1,6 +1,6 @@
-import { TFormBaseElement } from '../TFormBaseElement';
+import { TBaseElement } from './TBaseElement';
 
-export type TText = TFormBaseElement & {
+export type TText = TBaseElement & {
     type: 'text';
     placeholder: string;
 };

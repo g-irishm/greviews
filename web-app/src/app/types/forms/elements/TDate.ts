@@ -1,5 +1,5 @@
-import { TFormBaseElement } from '../TFormBaseElement';
+import { TBaseElement } from './TBaseElement';
 
-export type TDate = TFormBaseElement & {
+export type TDate = TBaseElement & {
     type: 'date';
 };

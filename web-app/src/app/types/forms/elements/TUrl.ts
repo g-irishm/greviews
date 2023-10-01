@@ -1,5 +1,5 @@
-import { TFormBaseElement } from '../TFormBaseElement';
+import { TBaseElement } from './TBaseElement';
 
-export type TUrl = TFormBaseElement & {
+export type TUrl = TBaseElement & {
     type: 'url';
 };

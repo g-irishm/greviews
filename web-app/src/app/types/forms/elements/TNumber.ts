@@ -1,5 +1,5 @@
-import { TFormBaseElement } from '../TFormBaseElement';
+import { TBaseElement } from './TBaseElement';
 
-export type TNumber = TFormBaseElement & {
+export type TNumber = TBaseElement & {
     type: 'number';
 };
