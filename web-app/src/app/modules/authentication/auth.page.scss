@@ -3,12 +3,11 @@
     font-family: 'Poppins', sans-serif;
 
     .highlight {
-        width: 37rem;
-        background-color: rgb(20, 20, 20);
-        color: white;
-        margin: 1rem;
-        border-radius: 1rem;
-        padding: 18.5rem 2rem;
+        width: 100%;
+        background-color: #f9f9f9;
+        color: #141414;
+        text-shadow: 10px 10px aqua;
+        height: 100vh;
         display: none;
 
         @media only screen and (min-width: 1024px) {
@@ -19,6 +18,8 @@
             font-family: 'Tourney', cursive;
             font-size: 7rem;
             margin: 0;
+            padding: 16rem 8rem;
+            position: relative;
         }
 
         p {
@@ -30,6 +31,10 @@
 
     .authentication {
         padding: 5rem;
+
+        @media only screen and (min-width: 1024px) {
+            width: 50rem;
+        }
 
         a {
             color: #141414
