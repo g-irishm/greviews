@@ -1,0 +1,9 @@
+<form [formGroup]='this.signupForm.form'>
+    <ng-container *ngFor='let elm of this.signupForm.formGroup.elements'>
+        <div class='form-elm'>
+            <label>{{elm.label}}</label>
+            <input [type]='elm.type' [name]='elm.name' [placeholder]='elm.placeholder' [formControlName]='elm.id'>
+        </div>
+    </ng-container>
+    <button type='submit' class='btn'>Register</button>
+</form>

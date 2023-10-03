@@ -11,14 +11,8 @@ export class AppComponent {
     title = 'web-app';
 
     constructor(
-        private globalService: GlobalService,
-        private authServices: AuthService
+        private globalService: GlobalService
     ) {
         globalService.initFirebase();
-
-        if (!authServices.isUserLoggedIn()) {
-            // TODO: redirect user to login page
-            console.log("User not logged in, redirecting to loging page")
-        }
     }
 }

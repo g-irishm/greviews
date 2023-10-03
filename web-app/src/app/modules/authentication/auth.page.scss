@@ -1,0 +1,38 @@
+.container {
+    display: flex;
+    font-family: 'Poppins', sans-serif;
+
+    .highlight {
+        width: 37rem;
+        background-color: rgb(20, 20, 20);
+        color: white;
+        margin: 1rem;
+        border-radius: 1rem;
+        padding: 18.5rem 2rem;
+        display: none;
+
+        @media only screen and (min-width: 1024px) {
+            display: block;
+        }
+
+        h2 {
+            font-family: 'Tourney', cursive;
+            font-size: 7rem;
+            margin: 0;
+        }
+
+        p {
+            font-family: 'Poppins', sans-serif;
+            text-align: right;
+            font-size: 2rem;
+        }
+    }
+
+    .authentication {
+        padding: 5rem;
+
+        a {
+            color: #141414
+        }
+    }
+}

@@ -1,5 +1,12 @@
-<form [formGroup]='this.loginForm.form'>
+<form [formGroup]='this.loginForm.form' (ngSubmit)='login()'>
     <ng-container *ngFor='let elm of this.loginForm.formGroup.elements'>
-        <input [type]='elm.type' [name]='elm.name' [placeholder]='elm.placeholder' [formControlName]='elm.type'>
+        <div class='form-elm'>
+            <label>{{elm.label}}</label>
+            <input [type]='elm.type' [name]='elm.name' [placeholder]='elm.placeholder' [formControlName]='elm.type'>
+        </div>
     </ng-container>
+    <div class='forgot-password'>
+        <a href='' >Forgot Password</a>
+    </div>
+    <button type='submit' class='btn'>Sign In</button>
 </form>

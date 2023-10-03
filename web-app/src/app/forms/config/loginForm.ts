@@ -10,16 +10,18 @@ const formConfig = {
     elements: {
         email: {
             type: 'email',
+            id: 'email',
             name: 'email',
             label: 'Email',
-            placeholder: 'Email',
+            placeholder: '',
             mandatory: true
         } as TEmail,
         password: {
             type: 'password',
+            id: 'password',
             name: 'password',
             label: 'Password',
-            placeholder: 'Password',
+            placeholder: '',
             mandatory: true
         } as TPassword
     }

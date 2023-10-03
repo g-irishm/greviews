@@ -11,24 +11,25 @@ export class BasicForm {
     public form;
 
     constructor(config: TFormConfig, elementValues: any) {
-        let formElements = this.createFormElements(elementValues);
+        let formConfig: TFormConfig = JSON.parse(JSON.stringify(config));
 
-        this.populateDynamicValues(config, elementValues);
-        this.form = new FormGroup(formElements);
-        this.formGroup = config.formGroup;
+        this.populateDynamicValues(formConfig, elementValues);
+
+        this.form = new FormGroup(this.createFormElements(formConfig.formGroup));
+        this.formGroup = formConfig.formGroup;
     }
 
-    createFormElements(elementValues: any) {
+    private createFormElements(formGroup: TFormGroup) {
         let formElements: any = {};
 
-        Object.keys(elementValues).forEach(key => {
-            formElements[key] = new FormControl(elementValues[key]);
-        })
+        formGroup.elements.forEach(elm => {
+            formElements[elm.id] = new FormControl(elm.value);
+        });
 
         return formElements;
     }
 
-    populateDynamicValues(config:TFormConfig, elementValues: any) {
+    private populateDynamicValues(config:TFormConfig, elementValues: any) {
         Object.keys(elementValues).forEach(key => {
             config.elements[key].value = elementValues[key];
             config.formGroup.elements.push(config.elements[key]);
