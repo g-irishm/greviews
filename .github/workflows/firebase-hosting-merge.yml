@@ -8,14 +8,12 @@ name: Deploy to Firebase Hosting on merge
       - main
 jobs:
   install_dependencies:
-    if: false
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: npm install -g @angular/cli & npm i
+      - run:  npm install -g @angular/cli & npm -v & node -v & npm i
         working-directory: web-app
   build:
-    if: false
     needs: install_dependencies
     runs-on: ubuntu-latest
     steps:
