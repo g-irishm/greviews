@@ -1,14 +1,15 @@
 import { FormControl, FormGroup } from '@angular/forms';
+import { IFormProperties } from 'interfaces/forms/IFormProperties';
 import { TFormConfig } from 'types/forms/TFormConfig';
 import { TFormGroup } from 'types/forms/TFormGroup';
 
-export class BasicForm {
-    public formGroup: TFormGroup = {
+export class BasicForm implements IFormProperties {
+    formGroup: TFormGroup = {
         name: '',
         elements: [ ]
     };
 
-    public form;
+    form: FormGroup;
 
     constructor(config: TFormConfig, elementValues: any) {
         let formConfig: TFormConfig = JSON.parse(JSON.stringify(config));
