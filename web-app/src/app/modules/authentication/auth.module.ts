@@ -20,4 +20,4 @@ import { SignupComponent } from 'src/app/components/authentication/signup/signup
     ReactiveFormsModule
   ]
 })
-export class LoginModule { }
+export class AuthModule { }

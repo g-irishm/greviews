@@ -10,7 +10,7 @@ const routes: Routes = [
     },
     { 
         path: 'login',
-        loadChildren: () => import('./modules/authentication/auth.module').then(m => m.LoginModule)
+        loadChildren: () => import('./modules/authentication/auth.module').then(m => m.AuthModule)
     },
     { 
         path: 'profile',
