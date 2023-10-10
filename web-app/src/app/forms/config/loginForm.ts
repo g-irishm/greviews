@@ -1,3 +1,4 @@
+import { Validators } from "@angular/forms";
 import { TFormConfig } from "types/forms/TFormConfig";
 import { TFormGroup } from "types/forms/TFormGroup";
 import { TEmail, TPassword } from "types/forms/elements";
@@ -14,7 +15,11 @@ const formConfig = {
             name: 'email',
             label: 'Email',
             placeholder: '',
-            mandatory: true
+            mandatory: true,
+            validations: [
+                Validators.required,
+                Validators.email
+            ]
         } as TEmail,
         password: {
             type: 'password',
@@ -22,7 +27,10 @@ const formConfig = {
             name: 'password',
             label: 'Password',
             placeholder: '',
-            mandatory: true
+            mandatory: true,
+            validations: [
+                Validators.required
+            ]
         } as TPassword
     }
 } as TFormConfig;

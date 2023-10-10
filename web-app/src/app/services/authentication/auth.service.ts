@@ -16,4 +16,10 @@ export class AuthService {
 
         return auth.currentUser ? true : false;
     }
+
+    getLoggedInUserData() {
+        const auth = getAuth();
+
+        return auth.currentUser?.displayName;
+    }
 }

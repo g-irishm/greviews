@@ -12,7 +12,10 @@ export class BasicForm implements IFormProperties {
     form: FormGroup;
 
     constructor(config: TFormConfig, elementValues: any) {
-        let formConfig: TFormConfig = JSON.parse(JSON.stringify(config));
+        let formConfig: TFormConfig =  {
+            formGroup: JSON.parse(JSON.stringify(config.formGroup)),
+            elements: config.elements
+        };
 
         this.populateDynamicValues(formConfig, elementValues);
 
@@ -24,7 +27,7 @@ export class BasicForm implements IFormProperties {
         let formElements: any = {};
 
         formGroup.elements.forEach(elm => {
-            formElements[elm.id] = new FormControl(elm.value);
+            formElements[elm.id] = new FormControl(elm.value, elm.validations);
         });
 
         return formElements;
@@ -32,8 +35,10 @@ export class BasicForm implements IFormProperties {
 
     private populateDynamicValues(config:TFormConfig, elementValues: any) {
         Object.keys(elementValues).forEach(key => {
-            config.elements[key].value = elementValues[key];
-            config.formGroup.elements.push(config.elements[key]);
+            config.formGroup.elements.push({
+                ...config.elements[key],
+                value: elementValues[key]
+            });
         })
     }
 }

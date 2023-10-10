@@ -5,4 +5,5 @@ export type TBaseElement = {
     mandatory: boolean;
     placeholder: string;
     value: string;
+    validations: Array<any>
 };
