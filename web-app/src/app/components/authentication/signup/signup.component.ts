@@ -27,7 +27,7 @@ export class SignupComponent implements OnInit {
             let formValues = this.signupForm.form.value;
             this.formError = '';
     
-            this.loginService.signup(formValues.email, formValues.password)
+            this.loginService.signup(formValues.firstName, formValues.lastName, formValues.email, formValues.password)
             .then(resp => {
                 this.success.emit(true);
             })

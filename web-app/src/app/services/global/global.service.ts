@@ -17,6 +17,7 @@ export class GlobalService {
         const firebaseConfig = {
             apiKey: "AIzaSyCePs4wTttw05CrzUjq5MVVK0Ae4UvIyuA",
             authDomain: "greviews-dev.firebaseapp.com",
+            databaseURL: "https://greviews-dev-default-rtdb.firebaseio.com",
             projectId: "greviews-dev",
             storageBucket: "greviews-dev.appspot.com",
             messagingSenderId: "714990806231",

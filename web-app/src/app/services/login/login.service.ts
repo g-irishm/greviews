@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
 
 
 @Injectable({
@@ -23,13 +23,18 @@ export class LoginService {
         });
     }
 
-    signup(email: string, password: string) {
+    signup(firstName: string, lastName: string, email: string, password: string) {
         return new Promise((resolve, reject) => {
             const auth = getAuth();
 
             createUserWithEmailAndPassword(auth, email, password)
                 .then((userCredential) => {
-                    // Signed in 
+                    // Signed in
+                    if (auth.currentUser) {
+                        updateProfile(auth.currentUser, {
+                            displayName: firstName + ' ' + lastName
+                        });
+                    }
                     resolve('');
                 }).catch((error) => {
                     reject(this.getErrorObject(error));
@@ -53,5 +58,4 @@ export class LoginService {
             errorMessage
         };
     }
-    
 }
