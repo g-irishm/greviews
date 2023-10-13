@@ -1,0 +1,23 @@
+input {
+    padding: 0.5rem;
+    width: 21rem;
+}
+
+.form-elm {
+    display: flex;
+    flex-direction: column;
+    margin: 2rem 0;
+}
+
+.forgot-password {
+    margin-bottom: 2rem;
+
+    a {
+        color: #141414;
+    }
+}
+
+.error {
+    color: red;
+    font-size: 0.8rem;
+}

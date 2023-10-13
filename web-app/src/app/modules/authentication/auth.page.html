@@ -1,0 +1,24 @@
+<main class='container'>
+    <div class='authentication'>
+        <div class='login' *ngIf='this.showLogin'>
+            <h1>Login</h1>
+            <p>
+                Don't have an account? <a (click)='this.toggleLogin()' href='javascript:void(0)'>Sign Up!</a>
+            </p>
+            <app-login (success)='onLogin($event)'></app-login>
+        </div>
+        <div class='signup' *ngIf='!this.showLogin'>
+            <h1>Signup</h1>
+            <p>
+                Already have an account? <a (click)='this.toggleLogin()' href='javascript:void(0)'>Login!</a>
+            </p>
+            <app-signup (success)='onLogin($event)'></app-signup>
+        </div>
+    </div>
+    <aside class='highlight'>
+        <h2>
+            Greviews
+            ★★★★★
+        </h2>
+    </aside>
+</main>
