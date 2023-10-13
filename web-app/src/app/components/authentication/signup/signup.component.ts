@@ -1,5 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { SignupForm } from 'src/app/forms/SignupForm';
+import { SignupForm } from 'src/app/forms/signup.form';
 import { LoginService } from 'src/app/services/login/login.service';
 
 @Component({
@@ -34,7 +34,9 @@ export class SignupComponent implements OnInit {
             .catch(error => {
                 this.formError = error.errorMessage;
             });
-        } else {
+        } else if (this.signupForm.form.errors?.['PasswordMismatch']) {
+            this.formError = 'Passwords do not match.'
+        }else {
             this.formError = 'Please fill the correct details.'
         }
     }

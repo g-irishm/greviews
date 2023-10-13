@@ -14,12 +14,13 @@ export class BasicForm implements IFormProperties {
     constructor(config: TFormConfig, elementValues: any) {
         let formConfig: TFormConfig =  {
             formGroup: JSON.parse(JSON.stringify(config.formGroup)),
-            elements: config.elements
+            elements: config.elements,
+            validations: config.validations
         };
 
         this.populateDynamicValues(formConfig, elementValues);
 
-        this.form = new FormGroup(this.createFormElements(formConfig.formGroup));
+        this.form = new FormGroup(this.createFormElements(formConfig.formGroup), formConfig.validations);
         this.formGroup = formConfig.formGroup;
     }
 

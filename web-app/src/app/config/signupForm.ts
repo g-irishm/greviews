@@ -2,6 +2,7 @@ import { Validators } from "@angular/forms";
 import { TFormConfig } from "types/forms/TFormConfig";
 import { TFormGroup } from "types/forms/TFormGroup";
 import { TEmail, TPassword, TText } from "types/forms/elements";
+import { confirmPassword } from "../forms/validations/ConfirmPassword";
 
 const formConfig = {
     formGroup: {
@@ -65,7 +66,10 @@ const formConfig = {
                 Validators.required
             ]
         } as TPassword
-    }
+    },
+    validations: [
+        confirmPassword
+    ]
 } as TFormConfig;
 
 export { formConfig };

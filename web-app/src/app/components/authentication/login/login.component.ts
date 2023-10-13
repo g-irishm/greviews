@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { LoginForm } from 'src/app/forms/LoginForm';
+import { LoginForm } from 'src/app/forms/login.form';
 import { LoginService } from 'src/app/services/login/login.service';
 
 @Component({

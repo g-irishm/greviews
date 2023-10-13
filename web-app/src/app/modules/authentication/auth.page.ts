@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Meta, Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 
 @Component({
@@ -12,9 +13,16 @@ export class AuthPage implements OnInit {
     returnUrl: string;
 
     constructor(
-        private router: Router
+        private router: Router,
+        private meta: Meta,
+        private title: Title
     ) {
         this.returnUrl = this.router.routerState.snapshot.root.queryParamMap.get('returnUrl') || '';
+        this.meta.updateTag({
+            name: 'title',
+            content: 'Greviews | Login',
+        }, 'name="title"');
+        this.title.setTitle('Greviews | Login');
     }
 
     ngOnInit(): void { }

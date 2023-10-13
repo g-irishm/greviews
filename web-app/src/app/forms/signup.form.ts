@@ -1,5 +1,5 @@
-import { BasicForm } from './BasicForm';
-import { formConfig } from './config/signupForm';
+import { BasicForm } from './basic.form';
+import { formConfig } from '../config/signupForm';
 
 export class SignupForm extends BasicForm {
 

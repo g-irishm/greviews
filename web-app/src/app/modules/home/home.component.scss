@@ -1,0 +1,36 @@
+h1 {
+    font-family: 'Tourney', cursive;
+    font-weight: 300;
+    font-size: 15rem;
+    margin: 0;
+    padding: 4rem 1rem 4rem;
+
+    @media only screen and (max-width: 600px) {
+        font-size: 12rem;
+        word-wrap: anywhere;
+        margin: 0;
+    }
+}
+
+.login {
+    padding: 1rem
+}
+
+.btn {
+    display: block;
+    padding: 0.7rem 0;
+    width: 11rem;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    color: black;
+    background-color: white;
+    margin-left: 1rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: black;
+    color: white;
+    height: 100vh;
+}
