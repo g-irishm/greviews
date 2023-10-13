@@ -1,0 +1,19 @@
+<form [formGroup]='this.signupForm.form' (ngSubmit)='signup()'>
+    <div class='error'>{{this.formError}}</div>
+    <ng-container *ngFor='let elm of this.signupForm.formGroup.elements'>
+        <div class='form-elm'>
+            <label>{{elm.label}}</label>
+            <input [type]='elm.type' [name]='elm.name' [placeholder]='elm.placeholder' [formControlName]='elm.id'>
+            <div *ngIf='elm.name !== "confirmedPassword"
+                && this.signupForm.form.get(elm.id)?.invalid
+                && this.signupForm.form.get(elm.id)?.touched' class='error'>
+                Invalid {{elm.label}}
+            </div>
+            <div *ngIf="elm.name === 'confirmedPassword'
+                && this.signupForm.form.errors?.PasswordMismatch" class='error'>
+                Passwords don't match
+            </div>
+        </div>
+    </ng-container>
+    <button type='submit' class='btn signup'>Register</button>
+</form>
