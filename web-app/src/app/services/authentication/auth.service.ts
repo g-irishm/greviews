@@ -18,15 +18,7 @@ export class AuthService {
     isUserLoggedIn() {
         const auth = getAuth();
 
-        this.saveCurrentUserToSession({
-            displayName: auth.currentUser?.displayName || '',
-        });
-
-        return auth.currentUser ? true : false;
-    }
-
-    saveCurrentUserToSession(user: TUserProfile): void {
-        localStorage.setItem('user', JSON.stringify(user));
+        return auth.currentUser ? true : false;;
     }
 
     getLoggedInUserData(): TUserProfile {
@@ -37,8 +29,7 @@ export class AuthService {
         const auth = getAuth();
 
         auth.signOut();
-
-        this.saveCurrentUserToSession({ displayName: ''});
+        localStorage.setItem('user', JSON.stringify({ displayName: ''}));
         this.router.navigate(['/login']);
     }
 }
