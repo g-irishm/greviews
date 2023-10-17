@@ -20,15 +20,17 @@ This documentation walks through the file structure of the web-app application. 
             |     |     |     - [component].component.ts
             |     |     |     - [component].component.scss
             |     |     |     - [component].component.spec.ts
+            | - config
+            |     | - [config].ts
             | - forms
-            |   - [form].ts
+            |     | - [form].ts
             | - guards
             |     | - [guard]
-            |     |     | - [guard].guard.ts
-            |     |     | - [guard].guard.spec.ts
+            |     |     - [guard].guard.ts
+            |     |     - [guard].guard.spec.ts
             | - interfaces
-            |   - [interface]
-            |     |   - [interface].ts
+            |     | - [interface]
+            |     |     - [interface].ts
             | - modules
             |     | - [module]
             |     |     - [module].module.ts
@@ -41,8 +43,8 @@ This documentation walks through the file structure of the web-app application. 
             |     | - [service]
             |     |     - [service].service.ts
             |     |     - [service].service.spec.ts
-            | - types
-            |   - [type].ts
+            |     | - types
+            |     |     - [type].ts
 ```
 
 ### src
@@ -59,6 +61,10 @@ This is the directory containing the web app code
 - This is the directory containing Angular components. You can find the component development guide on Angular. The directory contains 2 sub directories - `global` & specific module directory.
 
 - The specific module directory name is the same name as in the `modules` directory. It stores modules specific components which are lazy loaded only when that specific module is loaded.
+
+### config
+
+- This directory contains all the configurations required in specific modules or globally. Currently used for storing form configuration but can be used to store other types of configurations.
 
 ### forms
 [Angular Documentation Reference]()
