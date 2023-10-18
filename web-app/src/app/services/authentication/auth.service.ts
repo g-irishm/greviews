@@ -18,18 +18,21 @@ export class AuthService {
     isUserLoggedIn() {
         const auth = getAuth();
 
-        return auth.currentUser ? true : false;;
+        return auth.currentUser ? true : false;
     }
 
     getLoggedInUserData(): TUserProfile {
-        return JSON.parse(localStorage.getItem('user') || '{ displayName: "" }');
+        const auth = getAuth();
+
+        return {
+            displayName: auth.currentUser?.displayName || ''
+        }
     }
 
     signOut() {
         const auth = getAuth();
 
         auth.signOut();
-        localStorage.setItem('user', JSON.stringify({ displayName: ''}));
         this.router.navigate(['/login']);
     }
 }

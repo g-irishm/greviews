@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
-import { TUserProfile } from 'types/user/TUserProfile';
 
 @Injectable({
     providedIn: 'root'
@@ -16,11 +15,6 @@ export class LoginService {
             signInWithEmailAndPassword(auth, email, password)
                 .then((userCredential) => {
                     // Signed in
-
-                    this.saveCurrentUserToSession({
-                        displayName: auth.currentUser?.displayName || ''
-                    });
-
                     resolve('');
                 }).catch((error) => {
                     reject(this.getErrorObject(error));
@@ -39,20 +33,12 @@ export class LoginService {
                         updateProfile(auth.currentUser, {
                             displayName: firstName + ' ' + lastName
                         });
-
-                        this.saveCurrentUserToSession({
-                            displayName: firstName + ' ' + lastName
-                        });
                     }
                     resolve('');
                 }).catch((error) => {
                     reject(this.getErrorObject(error));
                 });
         });
-    }
-
-    saveCurrentUserToSession(user: TUserProfile): void {
-        localStorage.setItem('user', JSON.stringify(user));
     }
 
     getErrorObject(error: any): any {
