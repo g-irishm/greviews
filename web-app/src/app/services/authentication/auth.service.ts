@@ -18,27 +18,21 @@ export class AuthService {
     isUserLoggedIn() {
         const auth = getAuth();
 
-        this.saveCurrentUserToSession({
-            displayName: auth.currentUser?.displayName || '',
-        });
-
         return auth.currentUser ? true : false;
     }
 
-    saveCurrentUserToSession(user: TUserProfile): void {
-        localStorage.setItem('user', JSON.stringify(user));
-    }
-
     getLoggedInUserData(): TUserProfile {
-        return JSON.parse(localStorage.getItem('user') || '{ displayName: "" }');
+        const auth = getAuth();
+
+        return {
+            displayName: auth.currentUser?.displayName || ''
+        }
     }
 
     signOut() {
         const auth = getAuth();
 
         auth.signOut();
-
-        this.saveCurrentUserToSession({ displayName: ''});
         this.router.navigate(['/login']);
     }
 }
