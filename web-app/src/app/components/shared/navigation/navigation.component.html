@@ -1,0 +1,35 @@
+<div class='container w-100'>
+    <div class='container bar'>
+        <div class='title'>
+            <a href='/'>
+                Greviews
+            </a>
+        </div>
+        <nav class='menu'>
+            <li class='menu-item'>
+                <a [href]='this.userLoggedIn ? "/profile" : "/login"'>
+                    <div class='action'>
+                        <icon-profile></icon-profile>
+                        <span class='user-name'>{{this.userLoggedIn ? this.userName : 'Login / Register'}}</span>
+                    </div>
+                </a>
+            </li>
+            <li class='menu-item' *ngIf='this.userLoggedIn'>
+                <div class='action mobile-nav' (click)='showActions($event)'>
+                    <icon-menu></icon-menu>
+                    <span class="settings">Settings</span>
+                    <div class='actions hide'>
+                        <li class='action-item' *ngIf='this.userLoggedIn'>
+                            <a href='javascript:void(0)' (click)='signOut()'>
+                                <div class='action'>
+                                    <icon-logout></icon-logout>
+                                    <span>Logout</span>
+                                </div>
+                            </a>
+                        </li>
+                    </div>
+                </div>
+            </li>
+        </nav>
+    </div>
+</div>
