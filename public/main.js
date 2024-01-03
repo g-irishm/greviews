@@ -180,8 +180,10 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineInjector
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AuthGuard", function() { return AuthGuard; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
-/* harmony import */ var src_app_services_authentication_auth_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/services/authentication/auth.service */ "qIOU");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/router */ "tyNb");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var src_app_services_authentication_auth_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/authentication/auth.service */ "qIOU");
+
 
 
 class AuthGuard {
@@ -189,20 +191,20 @@ class AuthGuard {
         this.authService = authService;
     }
     canActivate(route, state) {
-        // if (!this.authService.isUserLoggedIn()) {
-        //     let currentUrl = state.url;
-        //     let urlTree = new UrlTree();
-        //     urlTree.root = new UrlSegmentGroup([new UrlSegment("login", {})], {});
-        //     urlTree.queryParams = {
-        //         returnUrl: currentUrl
-        //     }
-        //     return urlTree;
-        // }
+        if (!this.authService.isUserLoggedIn()) {
+            let currentUrl = state.url;
+            let urlTree = new _angular_router__WEBPACK_IMPORTED_MODULE_0__["UrlTree"]();
+            urlTree.root = new _angular_router__WEBPACK_IMPORTED_MODULE_0__["UrlSegmentGroup"]([new _angular_router__WEBPACK_IMPORTED_MODULE_0__["UrlSegment"]("login", {})], {});
+            urlTree.queryParams = {
+                returnUrl: currentUrl
+            };
+            return urlTree;
+        }
         return true;
     }
 }
-AuthGuard.ɵfac = function AuthGuard_Factory(t) { return new (t || AuthGuard)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](src_app_services_authentication_auth_service__WEBPACK_IMPORTED_MODULE_1__["AuthService"])); };
-AuthGuard.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({ token: AuthGuard, factory: AuthGuard.ɵfac, providedIn: 'root' });
+AuthGuard.ɵfac = function AuthGuard_Factory(t) { return new (t || AuthGuard)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](src_app_services_authentication_auth_service__WEBPACK_IMPORTED_MODULE_2__["AuthService"])); };
+AuthGuard.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjectable"]({ token: AuthGuard, factory: AuthGuard.ɵfac, providedIn: 'root' });
 
 
 /***/ }),
