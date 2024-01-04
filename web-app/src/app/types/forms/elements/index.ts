@@ -8,4 +8,4 @@ export * from './TSelect';
 export * from './TTel';
 export * from './TText';
 export * from './TUrl';
-export * from './Tdate';
+export * from './TDate';
