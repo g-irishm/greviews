@@ -1,4 +1,4 @@
-name: Deploy to Development on merge
+name: Development deployment
 'on':
   push:
     branches:
@@ -20,6 +20,10 @@ jobs:
     - name: Build
       run: npm run build
       working-directory: web-app
+    - name: Setup Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '18'
     - name: Deploy
       uses: FirebaseExtended/action-hosting-deploy@v0
       with:
