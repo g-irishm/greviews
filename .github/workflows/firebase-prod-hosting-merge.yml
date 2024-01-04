@@ -8,7 +8,7 @@ name: Production deployment
       - main
 jobs:
   build:
-    name: Install dependency and build app
+    name: Build and deploy
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
@@ -21,19 +21,18 @@ jobs:
       run: npm install
       working-directory: web-app
     - name: Build
-      run: mkdir ../public & npm run build:prod
+      run: npm run build:prod
       working-directory: web-app
-  deploy:
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - uses: actions/checkout@v2
-      - run: echo "Deploying App"
-      - uses: FirebaseExtended/action-hosting-deploy@v0
-        with:
-          repoToken: '${{ secrets.GITHUB_TOKEN }}'
-          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_GREVIEWS_XYZ }}'
-          channelId: live
-          projectId: greviews-xyz
-        env:
-          FIREBASE_CLI_PREVIEWS: hostingchannels
+    - name: Setup Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '18'
+    - name: Deploy
+      uses: FirebaseExtended/action-hosting-deploy@v0
+      with:
+        repoToken: '${{ secrets.GITHUB_TOKEN }}'
+        firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_GREVIEWS_XYZ }}'
+        channelId: live
+        projectId: greviews-xyz
+    env:
+        FIREBASE_CLI_PREVIEWS: hostingchannels
