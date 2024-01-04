@@ -17,8 +17,10 @@ jobs:
     - name: Install dependencies
       run: npm install
       working-directory: web-app
+    - name: Create build folder
+      run: mkdir public
     - name: Build
-      run: mkdir ../public & npm run build
+      run: npm run build
       working-directory: web-app
   deploy:
     runs-on: ubuntu-latest
