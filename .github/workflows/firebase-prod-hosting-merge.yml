@@ -7,23 +7,25 @@ name: Deploy to Production on merge
     branches:
       - main
 jobs:
-  install_dependencies:
-    if: false
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - run: npm install -g @angular/cli & npm i
-        working-directory: web-app
   build:
-    if: false
-    needs: install_dependencies
+    name: Install dependency and build app
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - run: mkdir ../public
-        working-directory: web-app
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Setup Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'
+    - name: Install dependencies
+      run: npm install
+      working-directory: web-app
+    - name: Build
+      run: mkdir ../public & npm run build:prod
+      working-directory: web-app
   deploy:
     runs-on: ubuntu-latest
+    needs: build
     steps:
       - uses: actions/checkout@v2
       - run: echo "Deploying App"
