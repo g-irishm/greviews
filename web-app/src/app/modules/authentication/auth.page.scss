@@ -10,7 +10,7 @@
     }
 
     .highlight {
-        width: 100%;
+        width: 70%;
         color: #141414;
         text-shadow: 10px 10px aqua;
         margin: 3rem 0;
@@ -46,7 +46,7 @@
 
     .authentication {
         @media only screen and (min-width: 1024px) {
-            width: 50rem;
+            width: 30rem;
             padding: 5rem;
             box-shadow: 3px 0px #cecccc26;
             z-index: 1;

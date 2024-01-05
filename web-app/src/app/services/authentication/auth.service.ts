@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { getAuth } from 'firebase/auth';
+import { getAuth, signOut } from 'firebase/auth';
 import { TUserProfile } from 'types/user/TUserProfile';
 
 @Injectable({
@@ -32,7 +32,11 @@ export class AuthService {
     signOut() {
         const auth = getAuth();
 
-        auth.signOut();
-        this.router.navigate(['/login']);
+        signOut(auth)
+        .then()
+        .catch()
+        .finally(() => {
+            this.router.navigate(['/login']);
+        });
     }
 }

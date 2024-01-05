@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { GlobalService } from './services/global/global.service';
-import { AuthService } from './services/authentication/auth.service';
 
 @Component({
     selector: 'app-root',
@@ -8,7 +7,7 @@ import { AuthService } from './services/authentication/auth.service';
     styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-    title = 'web-app';
+    title = 'Greviews';
 
     constructor(
         private globalService: GlobalService
