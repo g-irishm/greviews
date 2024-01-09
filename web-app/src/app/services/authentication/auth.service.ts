@@ -25,7 +25,7 @@ export class AuthService {
         const auth = getAuth();
 
         return {
-            displayName: auth.currentUser?.displayName || ''
+            displayName: (auth.currentUser?.displayName || '').split(' ')[0]
         }
     }
 
