@@ -2,5 +2,6 @@
     "editor.tabSize": 4,
     "editor.renderWhitespace": "all",
     "editor.insertSpaces": true,
-    "editor.detectIndentation": false
+    "editor.detectIndentation": false,
+    "editor.wordWrap": "on"
 }
