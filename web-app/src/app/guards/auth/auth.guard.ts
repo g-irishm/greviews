@@ -26,10 +26,8 @@ export class AuthGuard implements CanActivate {
                             returnUrl: currentUrl
                         }
                         reject(urlTree);
-                        // return urlTree;
                     }
                     resolve(true);
-                    // return true;
                 })
             })
     }
