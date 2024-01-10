@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { GlobalService } from './services/global/global.service';
 
 @Component({
     selector: 'app-root',
@@ -9,9 +8,5 @@ import { GlobalService } from './services/global/global.service';
 export class AppComponent {
     title = 'Greviews';
 
-    constructor(
-        private globalService: GlobalService
-    ) {
-        globalService.initFirebase();
-    }
+    constructor( ) { }
 }
