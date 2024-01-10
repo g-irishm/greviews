@@ -2,12 +2,13 @@ import { Injectable } from '@angular/core';
 import { FirebaseApp, initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { environment } from 'src/environments/environment';
-import { browserLocalPersistence, getAuth, setPersistence } from 'firebase/auth';
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
+import { Resolve } from '@angular/router';
 
 @Injectable({
     providedIn: 'root'
 })
-export class GlobalService {
+export class GlobalService implements Resolve<any> {
     app: FirebaseApp | undefined;
 
     constructor() { }
@@ -16,16 +17,22 @@ export class GlobalService {
      * Save the app object for global use.
     */
     initFirebase() {
-        // Initialize Firebase
         const app = initializeApp(environment.firebaseConfig);
         const analytics = getAnalytics(app);
 
-        const auth = getAuth(app);
-        (async () => {
-            await setPersistence(auth, browserLocalPersistence);
-        })();
-
         this.app = app;
+    }
+
+    resolve(): Promise<any>|any {
+        return new Promise<void>((resolve, reject) => {
+            // Initialize Firebase
+            this.initFirebase();
+
+            const auth = getAuth(this.app);
+            onAuthStateChanged(auth, () => {
+                resolve();
+            });
+        });
     }
 
     /* Returns the firebase app object for global use
