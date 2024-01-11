@@ -8,7 +8,7 @@
         <nav class='menu'>
             <div class='menu-item profile' [class]='this.userLoggedIn ? "logged-in" : "guest"'>
                 <a [href]='this.userLoggedIn ? "/profile" : "/login"'>
-                    <div class='action'>
+                    <div class='user'>
                         <icon-profile></icon-profile>
                         <span class='user-name'>{{this.userLoggedIn ? this.userName : 'Profile'}}</span>
                     </div>
