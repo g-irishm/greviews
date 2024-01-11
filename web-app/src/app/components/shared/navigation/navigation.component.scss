@@ -45,7 +45,7 @@
             position: relative;
         }
 
-        span {
+        .label {
             font-size: 0.875rem;
             display: none;
         }
@@ -88,10 +88,17 @@
 
 .actions {
     position: absolute;
-    top: 4.5rem;
     background: #FBFBFB;
     padding: 1rem 3rem;
     z-index: 4;
+    top: -3rem;
+    right: 0;
+    
+    @media only screen and (min-width: 1024px) {
+        top: 4.5rem;
+        right: auto;
+        left: 4rem;
+    }
 }
 
 .action-item {
