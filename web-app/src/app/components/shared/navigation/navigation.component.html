@@ -11,20 +11,6 @@
                     <div class='action'>
                         <icon-profile></icon-profile>
                         <span class='user-name'>{{this.userLoggedIn ? this.userName : 'Profile'}}</span>
-                        <!-- <div class='action' (click)='showActions($event)'>
-                            <icon-menu></icon-menu>
-                            <span class="settings">Settings</span>
-                            <div class='actions hide'>
-                                <li class='action-item'>
-                                    <a href='javascript:void(0)' (click)='signOut()'>
-                                        <div class='action'>
-                                            <icon-logout></icon-logout>
-                                            <span>Logout</span>
-                                        </div>
-                                    </a>
-                                </li>
-                            </div>
-                        </div> -->
                     </div>
                 </a>
             </div>
@@ -32,16 +18,26 @@
                 <div class='menu-item'>
                     <a href="/">
                         <icon-home></icon-home>
-                        <span class="home">Home</span>
+                        <span class="label">Home</span>
                     </a>
                 </div>
                 <div class='menu-item'>
                     <icon-calendar></icon-calendar>
-                    <span class="home">Appointments</span>
+                    <span class="label">Appointments</span>
                 </div>
-                <div class='menu-item'>
+                <div class='menu-item action' (click)='showActions($event)'>
                     <icon-menu></icon-menu>
-                    <span class="home">Settings</span>
+                    <span class="label">Settings</span>
+                    <div class='actions hide'>
+                        <li class='action-item'>
+                            <a href='javascript:void(0)' (click)='signOut()'>
+                                <div class='action'>
+                                    <icon-logout></icon-logout>
+                                    <span>Logout</span>
+                                </div>
+                            </a>
+                        </li>
+                    </div>
                 </div>
             </div>
         </nav>
