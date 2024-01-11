@@ -9,7 +9,7 @@
             <div class='menu-item profile' [class]='this.userLoggedIn ? "logged-in" : "guest"'>
                 <a [href]='this.userLoggedIn ? "/profile" : "/login"'>
                     <div class='user'>
-                        <icon-profile></icon-profile>
+                        <app-portrait></app-portrait>
                         <span class='user-name'>{{this.userLoggedIn ? this.userName : 'Profile'}}</span>
                     </div>
                 </a>
@@ -24,6 +24,12 @@
                 <div class='menu-item'>
                     <icon-calendar></icon-calendar>
                     <span class="label">Appointments</span>
+                </div>
+                <div class='menu-item'>
+                    <a href="/dashboard">
+                        <icon-dashboard></icon-dashboard>
+                        <span class="label">Dashboard</span>
+                    </a>
                 </div>
                 <div class='menu-item action' (click)='showActions($event)'>
                     <icon-menu></icon-menu>

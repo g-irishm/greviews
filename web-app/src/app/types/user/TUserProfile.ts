@@ -1,3 +1,5 @@
 export type TUserProfile = {
-    displayName: string
+    displayName: string;
+    photoURL: string;
+    email: string;
 }

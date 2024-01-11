@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/services/authentication/auth.service';
+import { TUserProfile } from 'types/user/TUserProfile';
 
 @Component({
     selector: 'page-profile',
@@ -7,8 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfilePage implements OnInit {
 
-    constructor() { }
+    user: TUserProfile;
+    editMode: boolean;
 
-    ngOnInit(): void {
+    constructor(
+        private authService: AuthService
+    ) {
+        this.editMode = false;
+        this.user = this.authService.getLoggedInUserData();
     }
+
+    ngOnInit(): void { }
 }

@@ -1,2 +1,37 @@
 <app-navigation></app-navigation>
-<main></main>
+<main class='container w-100'>
+    <div class='container m-auto'>
+        <div class='profile'>
+            <h2 class='name'>
+                <span>Hello, </span>
+                {{this.user.displayName}}
+            </h2>
+            <div class='section basics'>
+                <div class='content'>
+                    <app-basics [editMode]='this.editMode'></app-basics>
+                </div>
+            </div>
+            <div class='section account'>
+                <h3 class='title'>Account Settings</h3>
+                <div class='content'>
+                    <div class='block'>
+                        <span class='label'>
+                            Account Type
+                        </span>
+                        <span>
+                            Personal
+                        </span>
+                    </div>
+                    <div class='block reset-password'>
+                        <span class='label'>
+                            Forgot password?
+                        </span>
+                        <a href='/password-reset' class='btn btn-pass-reset'>
+                            Reset Password
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
