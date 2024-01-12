@@ -1,13 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 body {
-    background: #f0f0f0;
+    background-color: #FBFBFB;
 }
 
 main {
-    height: 100vh;
-
-    @media only screen and (max-width: 1024px) {
-        padding-bottom: 3rem;
+    height: 100%;
+    padding: 1rem 1rem 3rem 1rem;
+    max-width: 100%;
+    
+    @media only screen and (min-width: 1024px) {
+        padding: 2rem 2rem 0;
     }
 }
 

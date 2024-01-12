@@ -54,7 +54,7 @@
         }
 
         .label {
-            font-size: 0.875rem;
+            font-size: 0.625rem;
             display: none;
         }
     }
@@ -64,7 +64,8 @@
     list-style: none;
 }
 
-.menu-item {
+.menu-item,
+.menu-item a {
     padding: 0 1rem;
     display: flex;
     flex-direction: column;
