@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ProfileForm } from 'src/app/forms/profile.form';
 import { AuthService } from 'src/app/services/authentication/auth.service';
 
@@ -7,7 +7,7 @@ import { AuthService } from 'src/app/services/authentication/auth.service';
     templateUrl: './basics.component.html',
     styleUrls: ['./basics.component.scss']
 })
-export class BasicsComponent implements OnInit {
+export class BasicsComponent {
 
     @Input() editMode: boolean;
     profileForm: ProfileForm;
@@ -25,9 +25,4 @@ export class BasicsComponent implements OnInit {
             user.email
         );
     }
-
-    ngOnInit(): void {
-    }
-
-    updateImage():void { }
 }

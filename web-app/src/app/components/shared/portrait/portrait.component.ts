@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { AuthService } from 'src/app/services/authentication/auth.service';
 
 @Component({
@@ -6,7 +6,7 @@ import { AuthService } from 'src/app/services/authentication/auth.service';
     templateUrl: './portrait.component.html',
     styleUrls: ['./portrait.component.scss']
 })
-export class PortraitComponent implements OnInit {
+export class PortraitComponent {
 
     @Input() type: string;
     picture: string;
@@ -14,12 +14,7 @@ export class PortraitComponent implements OnInit {
     constructor(
         private authService: AuthService
     ) {
-        this.picture = '';
         this.type = 'sm';
-    }
-
-    ngOnInit(): void {
         this.picture = this.authService.getLoggedInUserData().photoURL;
     }
-
 }

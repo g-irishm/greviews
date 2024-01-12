@@ -8,20 +8,7 @@
         <ng-container *ngFor='let elm of this.profileForm.formGroup.elements'>
             <div class='form-elm'>
                 <label>{{elm.label}}</label>
-                <ng-container *ngIf='this.editMode'>
-                    <input [type]='elm.type' [name]='elm.name' [placeholder]='elm.placeholder' [value]='elm.value'>
-                </ng-container>
-                <ng-container *ngIf='!this.editMode'>
-                    {{elm.value}}
-                </ng-container>
-                <div *ngIf="this.profileForm.form.get(elm.id)?.invalid && this.profileForm.form.get(elm.id)?.touched" class="error">
-                    Invalid {{elm.label}}
-                </div>
-            </div>
-        </ng-container>
-        <ng-container *ngIf='this.editMode'>
-            <div class='save'>
-                <button type='submit' class='btn'>Save</button>
+                {{elm.value}}
             </div>
         </ng-container>
     </form>
