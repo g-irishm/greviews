@@ -1,3 +1,7 @@
+.container {
+    margin: auto;
+}
+
 h1 {
     font-family: 'Tourney', cursive;
     font-weight: 300;
@@ -9,6 +13,7 @@ h1 {
         font-size: 12rem;
         word-wrap: anywhere;
         margin: 0;
+        padding: 1rem;
     }
 }
 
