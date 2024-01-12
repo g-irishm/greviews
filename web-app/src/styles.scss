@@ -3,6 +3,14 @@ body {
     background: #f0f0f0;
 }
 
+main {
+    height: 100vh;
+
+    @media only screen and (max-width: 1024px) {
+        padding-bottom: 3rem;
+    }
+}
+
 .container {
     background-color: #FBFBFB;
     font-family: 'Poppins', sans-serif;
@@ -20,6 +28,10 @@ body {
 a {
     text-decoration: none;
     color: #06142E;
+}
+
+.m-auto {
+    margin: auto;
 }
 
 .btn {

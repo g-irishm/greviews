@@ -25,7 +25,9 @@ export class AuthService {
         const auth = getAuth();
 
         return {
-            displayName: (auth.currentUser?.displayName || '').split(' ')[0]
+            displayName: (auth.currentUser?.displayName || ''),
+            photoURL: auth.currentUser?.photoURL || '',
+            email: auth.currentUser?.email || '',
         }
     }
 

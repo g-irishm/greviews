@@ -1,0 +1,15 @@
+<div class='form-basics'>
+    <div class='picture'>
+        <app-portrait [type]='"lg"'></app-portrait>
+    </div>
+    
+    <form class='form'>
+        <div class='error'>{{this.formError}}</div>
+        <ng-container *ngFor='let elm of this.profileForm.formGroup.elements'>
+            <div class='form-elm'>
+                <label>{{elm.label}}</label>
+                {{elm.value}}
+            </div>
+        </ng-container>
+    </form>
+</div>
