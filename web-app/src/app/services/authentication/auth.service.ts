@@ -28,6 +28,7 @@ export class AuthService {
             displayName: (auth.currentUser?.displayName || ''),
             photoURL: auth.currentUser?.photoURL || '',
             email: auth.currentUser?.email || '',
+            isProfessional: false
         }
     }
 
