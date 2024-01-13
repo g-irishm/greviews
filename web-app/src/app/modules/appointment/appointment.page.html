@@ -1,0 +1,13 @@
+<app-navigation></app-navigation>
+<main class='container w-100'>
+    <div class='container m-auto'>
+        <h2>Upcoming</h2>
+        <ng-container *ngIf='this.appointments.length === 0'>
+            <p>Look like you have no upcoming appointments.</p>
+            <a href='/'>
+                Consult a professional
+            </a>
+        </ng-container>
+    </div>
+</main>
+

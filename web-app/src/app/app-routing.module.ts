@@ -33,6 +33,11 @@ const routes: Routes = [
         canActivate: [AuthGuard],
         loadChildren: () => import('./modules/dashboard/dashboard.module').then(m => m.DashboardModule)
     },
+    {
+        path: 'appointment',
+        canActivate: [AuthGuard],
+        loadChildren: () => import('./modules/appointment/appointment.module').then(m => m.AppointmentModule)
+    },
 ];
 
 @NgModule({
