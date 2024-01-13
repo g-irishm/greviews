@@ -1,0 +1,38 @@
+.un-skilled {
+    p {
+        padding-bottom: 2rem;
+        text-align: justify;
+    }
+
+    .faq {
+        border-bottom: 1px solid black;
+    }
+}
+
+.section {
+    padding: 1rem;
+
+    @media only screen and (min-width: 1024px) {
+        padding: 1rem 4rem;
+    }
+
+    &.add {
+        display: flex;
+        justify-content: flex-end;
+    }
+}
+
+.btn-add-service {
+    position: relative;
+    padding-left: 2rem;
+
+    &::before {
+        content: "+";
+        background: white;
+        color: black;
+        position: absolute;
+        left: 0;
+        top: 0;
+        padding: 0.7rem 0.8rem;
+    }
+}

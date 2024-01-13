@@ -5,3 +5,19 @@ a {
 p {
     padding: 2rem 0;
 }
+
+.btn-consult {
+    position: relative;
+    padding-right: 2rem;
+    width: 15rem;
+
+    &::after {
+        content: "→";
+        background: white;
+        color: black;
+        position: absolute;
+        right: 0;
+        top: 0;
+        padding: 0.7rem 0.8rem;
+    }
+}
