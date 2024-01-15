@@ -1,17 +1,8 @@
-.skilled {
-    .section {
-        border: 1px dotted black;
-        padding: 1rem;
+.section {
+    padding: 1rem;
 
-        @media only screen and (min-width: 1024px) {
-            padding: 1rem 4rem;
-        }
-    }
-}
-
-.un-skilled {
-    .section {
-        padding: 1rem;
+    @media only screen and (min-width: 1024px) {
+        padding: 1rem 4rem;
     }
 }
 
@@ -20,10 +11,6 @@
         display: flex;
         justify-content: flex-end;
     }
-}
-
-.btn-view-all {
-    text-decoration: underline;
 }
 
 .btn-add-service {
