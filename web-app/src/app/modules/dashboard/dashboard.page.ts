@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { AuthService } from 'src/app/services/authentication/auth.service';
 
 @Component({
@@ -6,7 +6,7 @@ import { AuthService } from 'src/app/services/authentication/auth.service';
     templateUrl: './dashboard.page.html',
     styleUrls: ['./dashboard.page.scss']
 })
-export class DashboardPage implements OnInit {
+export class DashboardPage {
 
     isProfessional: boolean;
 
@@ -15,6 +15,4 @@ export class DashboardPage implements OnInit {
     ) {
         this.isProfessional = AuthService.getLoggedInUserData().isProfessional;
     }
-
-    ngOnInit(): void { }
 }

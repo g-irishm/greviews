@@ -34,6 +34,11 @@ const routes: Routes = [
         loadChildren: () => import('./modules/dashboard/dashboard.module').then(m => m.DashboardModule)
     },
     {
+        path: 'skills',
+        canActivate: [AuthGuard],
+        loadChildren: () => import('./modules/skills/skills.module').then(m => m.SkillsModule)
+    },
+    {
         path: 'appointment',
         canActivate: [AuthGuard],
         loadChildren: () => import('./modules/appointment/appointment.module').then(m => m.AppointmentModule)

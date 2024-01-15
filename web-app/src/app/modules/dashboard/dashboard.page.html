@@ -1,34 +1,28 @@
 <app-navigation></app-navigation>
 <main class='container w-100'>
     <div class='container m-auto' [class]='this.isProfessional ? "skilled" : "un-skilled"'>
-        <div class='section add'>
-            <button class='btn btn-add-service'>List Services</button>
+        <h1>Dashboard</h1>
+        <div class='section' *ngIf='!this.isProfessional'>
+            <div class='add'>
+                <a href='/skills/add'>
+                    <button class='btn btn-add-service'>Add listing</button>
+                </a>
+            </div>
+            <app-unlisted></app-unlisted>
         </div>
-        <ng-container *ngIf='!this.isProfessional'>
-            <div class='section'>
-                <h2>
-                    Are you a professional ?
-                </h2>
-                <p>
-                    Do you provide professional consulations ?
-                    <br />
-                    If yes, then click on the <strong>'+'</strong> button above and list your skills.
-                </p>
-                <h2>
-                    How it works ?
-                </h2>
-                <p>
-                    The process is very easy, you just need to add your basic details about your skills
-                    and it will be sent for approval to us.
-                    <br />
-                    Post approval, everyone around the world will be able to see you and your skills.
-                </p>
-                <h2>
-                    Still have more questions ?
-                </h2>
-                <p>
-                    Check out our <a href="/faq" class='faq'>FAQ</a> to get to know more.
-                </p>
+        <ng-container *ngIf='this.isProfessional'>
+            <div class='section listings'>
+                <div class='add'>
+                    <a href='/skills/add'>
+                        <button class='btn btn-add-service'>Add listing</button>
+                    </a>
+                </div>
+                <div>
+                    <app-skills [quickView]='true'></app-skills>
+                </div>
+                <div>
+                    <a href='/skills' class='btn-view-all'>View all</a>
+                </div>
             </div>
         </ng-container>
     </div>

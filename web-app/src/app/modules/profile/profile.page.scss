@@ -25,6 +25,10 @@
     .title {
         margin: 0;
     }
+
+    &.account {
+        padding-left: 2rem;
+    }
 }
 
 .content {
@@ -48,16 +52,23 @@
 }
 
 .btn-pass-reset {
-    text-align: center;
-    margin-top: 1rem;
-    background: red;
-    border: none;
+    position: relative;
+    padding-right: 2rem;
+    background-color: red;
+    border: 1px solid red;
 
     &:hover {
-        color: white;
+        background-color: white;
+        color: red;
     }
 
-    @media only screen and (min-width: 1024px) {
-        margin: 0;
+    &::after {
+        content: "→";
+        background: white;
+        color: red;
+        position: absolute;
+        right: 0;
+        top: 0;
+        padding: 0.7rem 0.8rem;
     }
 }
