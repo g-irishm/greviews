@@ -1,13 +1,15 @@
 import { NgModule } from '@angular/core';
 
-import { SkillsRoutingModule } from './skills-routing.module';
 
 // Modules
-import { SharedModule } from '../shared/shared.module';
+import { ReactiveFormsModule } from '@angular/forms';
+import { SkillsRoutingModule } from './skills-routing.module';
 import { ProfessionModule } from '../shared/profession.module';
+import { SharedModule } from '../shared/shared.module';
 
 // Page
 import { SkillsPage } from './skills.page';
+import { AddSkillsPage } from './addSkill/addSkills.page';
 
 // Components
 import { NewSkillComponent } from 'src/app/components/skills/new-skill/new-skill.component';
@@ -16,12 +18,14 @@ import { NewSkillComponent } from 'src/app/components/skills/new-skill/new-skill
 @NgModule({
     declarations: [
         SkillsPage,
+        AddSkillsPage,
         NewSkillComponent
     ],
     imports: [
         SkillsRoutingModule,
         SharedModule,
-        ProfessionModule
+        ProfessionModule,
+        ReactiveFormsModule
     ]
 })
 export class SkillsModule { }
