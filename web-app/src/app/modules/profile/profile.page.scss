@@ -27,7 +27,9 @@
     }
 
     &.account {
-        padding-left: 2rem;
+        @media only screen and (min-width: 1024px) {
+            padding-left: 2rem;
+        }
     }
 }
 
@@ -56,6 +58,11 @@
     padding-right: 2rem;
     background-color: red;
     border: 1px solid red;
+    margin-top: 0.5rem;
+    
+    @media only screen and (min-width: 1024px) {
+        margin-top: 0;
+    }
 
     &:hover {
         background-color: white;

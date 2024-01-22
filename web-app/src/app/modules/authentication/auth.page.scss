@@ -17,7 +17,6 @@
 
         @media only screen and (min-width: 1024px) {
             height: 100vh;
-            background-color: #f9f9f9;
             margin: 0;
         }
 
@@ -53,7 +52,8 @@
         }
 
         a {
-            color: #141414
+            color: #141414;
+            text-decoration: underline;
         }
     }
 }
