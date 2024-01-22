@@ -1,0 +1,15 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+        {
+            "type": "npm",
+            "script": "start",
+            "path": "web-app",
+            "problemMatcher": [
+                "$eslint-compact"
+            ],
+            "label": "npm: start - web-app",
+            "detail": "ng serve"
+        }
+    ]
+}
