@@ -99,7 +99,7 @@
 
 .actions {
     position: absolute;
-    background: #F7F7F7;
+    background-color: white;
     padding: 1rem 3rem;
     z-index: 4;
     top: -3rem;
@@ -109,7 +109,7 @@
 
     @media only screen and (min-width: 1024px) {
         top: 3.5rem;
-        border: none;
+        padding: 0.8rem 3rem;
         width: auto;
     }
 }
