@@ -1,0 +1,29 @@
+<app-navigation></app-navigation>
+<main class='container w-100'>
+    <div class='container m-auto' [class]='this.isProfessional ? "skilled" : "un-skilled"'>
+        <h1>Dashboard</h1>
+        <div class='section' *ngIf='!this.isProfessional'>
+            <div class='add'>
+                <a href='/skills/add'>
+                    <button class='btn btn-add-service'>Add listing</button>
+                </a>
+            </div>
+            <app-unlisted></app-unlisted>
+        </div>
+        <ng-container *ngIf='this.isProfessional'>
+            <div class='section listings'>
+                <div class='add'>
+                    <a href='/skills/add'>
+                        <button class='btn btn-add-service'>Add listing</button>
+                    </a>
+                </div>
+                <div>
+                    <app-skills [quickView]='true'></app-skills>
+                </div>
+                <div>
+                    <a href='/skills' class='btn-view-all'>View all</a>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+</main>

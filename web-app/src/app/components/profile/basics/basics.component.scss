@@ -1,0 +1,28 @@
+.form-basics {
+    display: flex;
+    flex-direction: column;
+    
+    @media only screen and (min-width: 1024px) {
+        flex-direction: row;
+    }
+
+    .picture {
+        text-align: center;
+        flex-grow: 1;
+    }
+
+    .form {
+        flex-grow: 3;
+    }
+}
+
+.form-elm {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    padding-top: 1rem;
+
+    @media only screen and (min-width: 1024px) {
+        flex-direction: row;
+    }
+}

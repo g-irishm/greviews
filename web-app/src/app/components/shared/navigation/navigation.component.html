@@ -1,0 +1,53 @@
+<div class='container w-100'>
+    <div class='container bar'>
+        <div class='title'>
+            <a href='/'>
+                Greviews
+            </a>
+        </div>
+        <nav class='menu'>
+            <div class='menu-item profile' [class]='this.userLoggedIn ? "logged-in" : "guest"'>
+                <a [href]='this.userLoggedIn ? "/profile" : "/login"'>
+                    <div class='user'>
+                        <app-portrait></app-portrait>
+                        <span class='user-name'>{{this.userLoggedIn ? this.userName : 'Profile'}}</span>
+                    </div>
+                </a>
+            </div>
+            <div class='container mobile-nav' *ngIf='this.userLoggedIn'>
+                <div class='menu-item'>
+                    <a href="/">
+                        <icon-home></icon-home>
+                        <span class="label">Home</span>
+                    </a>
+                </div>
+                <div class='menu-item'>
+                    <a href="/appointment">
+                        <icon-calendar></icon-calendar>
+                        <span class="label">Appointments</span>
+                    </a>
+                </div>
+                <div class='menu-item'>
+                    <a href="/dashboard">
+                        <icon-dashboard></icon-dashboard>
+                        <span class="label">Dashboard</span>
+                    </a>
+                </div>
+                <div class='menu-item action' (click)='showActions($event)'>
+                    <icon-menu></icon-menu>
+                    <span class="label">Settings</span>
+                    <div class='actions hide'>
+                        <li class='action-item'>
+                            <a href='javascript:void(0)' (click)='signOut()'>
+                                <div class='action'>
+                                    <icon-logout></icon-logout>
+                                    <span>Logout</span>
+                                </div>
+                            </a>
+                        </li>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+</div>

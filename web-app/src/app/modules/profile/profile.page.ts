@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/authentication/auth.service';
+import { TUserProfile } from 'types/user/TUserProfile';
 
 @Component({
     selector: 'page-profile',
@@ -8,18 +9,15 @@ import { AuthService } from 'src/app/services/authentication/auth.service';
 })
 export class ProfilePage implements OnInit {
 
-    userName: string;
+    user: TUserProfile;
+    editMode: boolean;
 
     constructor(
         private authService: AuthService
     ) {
-        this.userName = this.authService.getLoggedInUserData().displayName;
+        this.editMode = false;
+        this.user = this.authService.getLoggedInUserData();
     }
 
-    ngOnInit(): void {
-    }
-
-    signOut() {
-        this.authService.signOut();
-    }
+    ngOnInit(): void { }
 }

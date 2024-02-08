@@ -1,0 +1,125 @@
+.title {
+    font-size: 1.5rem;
+    font-weight: 200;
+    width: 40%;
+    padding: 0 1rem;
+
+    @media only screen and (min-width: 1024px) {
+        display: block;
+        padding: 0;
+    }
+}
+
+.user-name {
+    color: #1B3358;
+    padding-left: 0.7rem;
+    padding-bottom: 0.3rem;
+}
+
+.menu {
+    padding: 0 1rem;
+    display: flex;
+    justify-content: space-between;
+
+    @media only screen and (min-width: 1024px) {
+        justify-content: end;
+        flex-direction: row-reverse;
+        padding: 0;
+    }
+
+    .profile {
+        padding: 0.8rem;
+    }
+
+    .logged-in {
+        .user-name {
+            max-width: 5rem;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+    }
+
+    .mobile-nav {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        left: 0;
+        display: flex;
+        justify-content: space-between;
+        padding: 1.5rem 0;
+        z-index: 99;
+
+        @media only screen and (min-width: 1024px) {
+            position: relative;
+            padding: 0.8rem 0;
+        }
+
+        .label {
+            font-size: 0.625rem;
+            display: none;
+        }
+    }
+}
+
+.action-item {
+    list-style: none;
+}
+
+.menu-item,
+.menu-item a {
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bar {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    padding: 1rem 0;
+    margin: auto;
+    position: static;
+    top: 0;
+}
+
+.action, .user {
+    display: flex;
+    font-size: 0.8rem;
+    align-items: center;
+    flex-direction: column;
+}
+
+.user {
+    flex-direction: row;
+}
+
+.actions {
+    position: absolute;
+    background-color: white;
+    padding: 1rem 3rem;
+    z-index: 4;
+    top: -3rem;
+    right: 0;
+    width: 100%;
+    border: 1px solid black;
+
+    @media only screen and (min-width: 1024px) {
+        top: 3.5rem;
+        padding: 0.8rem 3rem;
+        width: auto;
+    }
+}
+
+.action-item {
+    .action {
+        flex-direction: row;
+
+        span {
+            padding-left: 1rem;
+        }
+    }
+}

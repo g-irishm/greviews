@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 import { LoginRoutingModule } from './auth-routing.module';
 import { AuthPage } from './auth.page';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from 'src/app/components/authentication/login/login.component';
 import { SignupComponent } from 'src/app/components/authentication/signup/signup.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -15,9 +15,9 @@ import { SignupComponent } from 'src/app/components/authentication/signup/signup
     SignupComponent
   ],
   imports: [
-    CommonModule,
     LoginRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SharedModule
   ]
 })
 export class AuthModule { }

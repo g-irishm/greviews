@@ -27,10 +27,10 @@ export class LoginService {
             const auth = getAuth();
 
             createUserWithEmailAndPassword(auth, email, password)
-                .then((userCredential) => {
+                .then(async (userCredential) => {
                     // Signed in
                     if (auth.currentUser) {
-                        updateProfile(auth.currentUser, {
+                        await updateProfile(auth.currentUser, {
                             displayName: firstName + ' ' + lastName
                         });
                     }
@@ -45,11 +45,12 @@ export class LoginService {
         let errorCode = error.code;
         let errorMessage = 'Technical error, please try again.';
 
-        switch(error.code) {
+        switch(errorCode) {
             case 'auth/missing-email': errorMessage = 'Missing email address'; break;
             case 'auth/invalid-email': errorMessage = 'Invalid email address'; break;
             case 'auth/missing-password': errorMessage = 'Please enter your password'; break;
             case 'auth/invalid-login-credentials': errorMessage = 'The username or password don\'t match our database record'; break;
+            case 'auth/weak-password': errorMessage = 'Weak password. Please enter a strong password'; break;
         }
 
         return {

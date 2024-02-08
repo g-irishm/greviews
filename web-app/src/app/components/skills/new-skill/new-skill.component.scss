@@ -1,0 +1,27 @@
+input {
+    padding: 0.5rem;
+
+    @media only screen and (min-width: 1024px) {
+        width: 22rem;
+    }
+}
+
+.form-elm {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 2rem 0;
+
+    @media only screen and (min-width: 1024px) {
+        flex-direction: row;
+    }
+
+    .alert {
+        color: red;
+    }
+}
+
+.error {
+    color: red;
+    font-size: 0.8rem;
+}

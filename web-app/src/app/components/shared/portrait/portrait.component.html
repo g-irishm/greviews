@@ -1,0 +1,6 @@
+<ng-container *ngIf='!this.picture'>
+    <icon-profile [type]='this.type'></icon-profile>
+</ng-container>
+<ng-container *ngIf='this.picture'>
+    <img [src]='this.picture' />
+</ng-container>

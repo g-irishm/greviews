@@ -2,7 +2,7 @@ import { Validators } from "@angular/forms";
 import { TFormConfig } from "types/forms/TFormConfig";
 import { TFormGroup } from "types/forms/TFormGroup";
 import { TEmail, TPassword, TText } from "types/forms/elements";
-import { confirmPassword } from "../forms/validations/ConfirmPassword";
+import { confirmPassword } from "../forms/validators/ConfirmPassword";
 
 const formConfig = {
     formGroup: {

@@ -1,0 +1,81 @@
+.profile {
+    margin: auto;
+    max-width: 60rem;
+}
+
+.picture {
+    svg {
+        width: 2rem;
+    }
+}
+
+.edit {
+    float: right;
+    color: red;
+}
+
+.name {
+    font-weight: 100;
+}
+
+.section {
+    padding: 2rem 0;
+    border-bottom: 1px dotted;
+
+    .title {
+        margin: 0;
+    }
+
+    &.account {
+        @media only screen and (min-width: 1024px) {
+            padding-left: 2rem;
+        }
+    }
+}
+
+.content {
+    padding: 2rem 0 0 0;
+    
+    @media only screen and (min-width: 1024px) {
+        padding: 3rem 3rem 0 0;
+    }
+
+    .block {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        padding-bottom: 1rem;
+    
+        @media only screen and (min-width: 1024px) {
+            flex-direction: row;
+            align-items: center;
+        }
+    }
+}
+
+.btn-pass-reset {
+    position: relative;
+    padding-right: 2rem;
+    background-color: red;
+    border: 1px solid red;
+    margin-top: 0.5rem;
+    
+    @media only screen and (min-width: 1024px) {
+        margin-top: 0;
+    }
+
+    &:hover {
+        background-color: white;
+        color: red;
+    }
+
+    &::after {
+        content: "→";
+        background: white;
+        color: red;
+        position: absolute;
+        right: 0;
+        top: 0;
+        padding: 0.7rem 0.8rem;
+    }
+}

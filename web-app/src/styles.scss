@@ -1,14 +1,63 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    font-weight: 300;
+}
+
+h2, h3 {
+    font-weight: 400;
+}
+
+main {
+    height: 100%;
+    padding: 1rem 1rem 5rem 1rem;
+    max-width: 100%;
+    
+    @media only screen and (min-width: 1024px) {
+        padding: 2rem 2rem 0;
+    }
+}
+
+.container {
+    background-color: white;
+    font-family: 'Poppins', sans-serif;
+    max-width: 1440px;
+
+    @media only screen and (min-width: 1024px) {
+        padding: 0 1rem;
+    }
+}
+
+.w-100 {
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: #06142E;
+}
+
+.m-auto {
+    margin: auto;
+}
+
 .btn {
-    background-color: black;
+    background-color: #06142E;
     color: white;
-    border: 1px solid black;
+    border: 1px solid #06142E;
     padding: 0.7rem 0;
     width: 11rem;
     cursor: pointer;
 
     &:hover {
         background-color: white;
-        color: black
+        color: #06142E
     }
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
 }
