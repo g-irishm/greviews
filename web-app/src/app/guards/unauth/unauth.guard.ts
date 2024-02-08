@@ -7,7 +7,7 @@ import { GlobalService } from 'src/app/services/global/global.service';
 @Injectable({
     providedIn: 'root'
 })
-export class AuthGuard implements CanActivate {
+export class UnauthGuard implements CanActivate {
     router: Router
 
     constructor(
@@ -23,15 +23,9 @@ export class AuthGuard implements CanActivate {
         state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
             return new Promise((resolve, reject) => {
                 this.globalService.resolve().then(() => {
-                    if (!this.authService.isUserLoggedIn()) {
-                        let currentUrl = state.url;
-                        let urlTree = new UrlTree();
-                        urlTree.root = new UrlSegmentGroup([new UrlSegment("login", {})], {});
-                        urlTree.queryParams = {
-                            returnUrl: currentUrl
-                        }
-                        this.router.navigateByUrl(urlTree);
-                        reject(urlTree);
+                    if (this.authService.isUserLoggedIn()) {
+                        this.router.navigateByUrl('home');
+                        reject(false);
                     }
                     resolve(true);
                 })
