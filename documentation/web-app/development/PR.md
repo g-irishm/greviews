@@ -13,21 +13,14 @@ Example:
 You can find the list of issue types in the document: [Issues](./Issue.md)
 
 ## Description
-The description of the PR should contain the following format
-
-```
-#[Issue Number]
-
-**Description**
-[Explain in detail here the problems addressed in this PR]
-```
+The description of the PR should contain the format as specified in [Pull Request Template](../github/PULL_REQUEST_TEMPLATE.md)
 
 Example
 
 ```
-Issue #34
+#34
 
-#Description
+Description
 Added option to update profile
 
 ```
