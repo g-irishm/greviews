@@ -13,7 +13,7 @@ Example:
 You can find the list of issue types in the document: [Issues](./Issue.md)
 
 ## Description
-The description of the PR should contain the format as specified in [Pull Request Template](../github/PULL_REQUEST_TEMPLATE.md)
+The description of the PR should contain the format as specified below:
 
 Example
 
