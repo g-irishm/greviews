@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './guards/auth/auth.guard';
 import { GlobalService } from './services/global/global.service';
+import { UnauthGuard } from './guards/unauth/unauth.guard';
 
 const routes: Routes = [
     {
@@ -18,6 +19,7 @@ const routes: Routes = [
     },
     {
         path: 'login',
+        canActivate: [UnauthGuard],
         loadChildren: () => import('./modules/authentication/auth.module').then(m => m.AuthModule),
         resolve: {
             data: GlobalService
