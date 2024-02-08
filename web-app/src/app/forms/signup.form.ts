@@ -4,11 +4,11 @@ import { formConfig } from '../config/signupForm';
 export class SignupForm extends BasicForm {
 
     constructor(
-        private firstName?: string | null,
-        private lastName?: string | null,
-        private email?: string | null,
-        private password?: string | null,
-        private confirmedPassword?: string | null
+        private firstName?: string | undefined,
+        private lastName?: string | undefined,
+        private email?: string | undefined,
+        private password?: string | undefined,
+        private confirmedPassword?: string | undefined
     ) {
         super(formConfig, { firstName, lastName, email, password, confirmedPassword });
     }

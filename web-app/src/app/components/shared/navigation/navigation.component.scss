@@ -48,6 +48,7 @@
         display: flex;
         justify-content: space-between;
         padding: 1.5rem 0;
+        z-index: 99;
 
         @media only screen and (min-width: 1024px) {
             position: relative;
@@ -98,16 +99,18 @@
 
 .actions {
     position: absolute;
-    background: #F7F7F7;
+    background-color: white;
     padding: 1rem 3rem;
     z-index: 4;
     top: -3rem;
     right: 0;
-    
+    width: 100%;
+    border: 1px solid black;
+
     @media only screen and (min-width: 1024px) {
         top: 3.5rem;
-        right: auto;
-        left: 4rem;
+        padding: 0.8rem 3rem;
+        width: auto;
     }
 }
 
