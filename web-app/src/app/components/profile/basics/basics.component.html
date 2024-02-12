@@ -2,14 +2,15 @@
     <div class='picture'>
         <app-portrait [type]='"lg"'></app-portrait>
     </div>
-    
+
     <form class='form'>
-        <div class='error'>{{this.formError}}</div>
-        <ng-container *ngFor='let elm of this.profileForm.formGroup.elements'>
-            <div class='form-elm'>
-                <label>{{elm.label}}</label>
-                {{elm.value}}
-            </div>
+        <ng-container *ngFor='let group of this.profileForm.formBuilder.groups; index as groupIndex'>
+            <ng-container *ngFor='let elm of group.elements'>
+                <div class='form-elm'>
+                    <label>{{elm.label}}</label>
+                    {{this.profileForm.form.controls[group.id].get(elm.id)?.value}}
+                </div>
+            </ng-container>
         </ng-container>
     </form>
 </div>

@@ -23,7 +23,7 @@ export class LoginComponent {
 
     login() {
         if (this.loginForm.form.valid) {
-            let formValues = this.loginForm.form.value;
+            let formValues = this.loginForm.form.value.login;
             this.formError = '';
     
             this.loginService.login(formValues.email, formValues.password)

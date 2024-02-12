@@ -1,5 +1,5 @@
 import { BasicForm } from './basic.form';
-import { formConfig } from '../config/profileForm';
+import { FormBuilder } from '../config/profileForm';
 
 export class ProfileForm extends BasicForm {
 
@@ -8,6 +8,6 @@ export class ProfileForm extends BasicForm {
         private lastName: string,
         private email: string
     ) {
-        super(formConfig, { firstName, lastName, email});
+        super(FormBuilder, { firstName, lastName, email});
     }
 }
