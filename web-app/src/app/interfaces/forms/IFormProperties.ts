@@ -1,7 +1,7 @@
-import { FormGroup } from "@angular/forms";
-import { TFormGroup } from "types/forms/TFormGroup";
+import { FormGroup } from '@angular/forms';
+import { TFormBuilder } from "types/forms/TFormBuilder";
 
 export interface IFormProperties {
-    formGroup: TFormGroup;
+    formBuilder: TFormBuilder;
     form: FormGroup
 }

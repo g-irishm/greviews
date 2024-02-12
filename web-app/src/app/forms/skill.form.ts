@@ -1,5 +1,5 @@
 import { BasicForm } from './basic.form';
-import { formConfig } from '../config/skillForm';
+import { FormBuilder } from '../config/skillForm';
 
 export class SkillForm extends BasicForm {
 
@@ -8,6 +8,6 @@ export class SkillForm extends BasicForm {
         private description?: string | undefined,
         private price?: string | undefined
     ) {
-        super(formConfig, { title, description, price });
+        super(FormBuilder, { title, description, price });
     }
 }
