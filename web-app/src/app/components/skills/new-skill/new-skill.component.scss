@@ -16,6 +16,11 @@ input {
         flex-direction: row;
     }
 
+    label {
+        font-size: 1.2rem;
+        text-transform: uppercase;
+    }
+
     .alert {
         color: red;
     }
