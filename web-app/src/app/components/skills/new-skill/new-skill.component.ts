@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { SkillForm } from 'src/app/forms/skill.form';
+import { SkillsService } from 'src/app/services/skills/skills.service';
 
 @Component({
     selector: 'app-new-skill',
@@ -12,7 +13,9 @@ export class NewSkillComponent implements OnInit {
     skillForm: SkillForm;
     formError: string;
 
-    constructor( ) {
+    constructor(
+        private skillService: SkillsService
+    ) {
         this.skillForm = new SkillForm();
         this.formError = '';
     }
@@ -21,6 +24,17 @@ export class NewSkillComponent implements OnInit {
     }
 
     addSkill(): void {
-        
+        if (this.skillForm.form.valid) {
+            let formValues = this.skillForm.form.value;
+            this.formError = '';
+
+            this.skillService.addSkill(formValues)
+            .then(resp => {
+                this.success.emit(true);
+            })
+            .catch(error => {
+                this.formError = error.errorMessage;
+            });
+        }
     }
 }
