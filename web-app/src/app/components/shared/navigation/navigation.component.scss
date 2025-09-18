@@ -29,6 +29,12 @@
 
     .profile {
         padding: 0.8rem;
+
+        @media only screen and (max-width: 1024px) {
+            a {
+                padding: 0;
+            }
+        }
     }
 
     .logged-in {

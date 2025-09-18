@@ -5,15 +5,15 @@
 h1 {
     font-family: 'Tourney', cursive;
     font-weight: 300;
-    font-size: 15rem;
+    font-size: 7rem;
+    word-wrap: anywhere;
     margin: 0;
-    padding: 4rem 1rem 4rem;
+    padding: 1rem;
 
-    @media only screen and (max-width: 600px) {
+    @media only screen and (min-width: 1024px) {
         font-size: 12rem;
-        word-wrap: anywhere;
         margin: 0;
-        padding: 1rem;
+        padding: 4rem 1rem 4rem;
     }
 }
 

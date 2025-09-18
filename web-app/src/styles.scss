@@ -9,7 +9,7 @@ h2, h3 {
 
 main {
     height: 100%;
-    padding: 1rem 1rem 5rem 1rem;
+    padding: 1rem 2rem 5rem 2rem;
     max-width: 100%;
     
     @media only screen and (min-width: 1024px) {
@@ -60,4 +60,8 @@ a {
 
 .show {
     display: block;
+}
+
+.section {
+    // padding: 1rem;
 }

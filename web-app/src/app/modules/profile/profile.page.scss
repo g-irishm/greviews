@@ -14,22 +14,30 @@
     color: red;
 }
 
-.name {
-    font-weight: 100;
-}
-
 .section {
     padding: 2rem 0;
     border-bottom: 1px dotted;
 
-    .title {
-        margin: 0;
+    &.basics {
+        padding-top: 0;
+
+        .content {
+            padding-top: 0;
+        }
     }
 
     &.account {
         @media only screen and (min-width: 1024px) {
             padding-left: 2rem;
         }
+    }
+
+    &:last-of-type {
+        border-bottom: none;
+    }
+
+    .title {
+        margin: 0;
     }
 }
 
