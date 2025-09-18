@@ -1,6 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { SkillForm } from 'src/app/forms/skill.form';
 import { SkillsService } from 'src/app/services/skills/skills.service';
+import { TSkill } from 'types/skill/TSkill';
 
 @Component({
     selector: 'app-new-skill',
@@ -26,9 +27,10 @@ export class NewSkillComponent implements OnInit {
     addSkill(): void {
         if (this.skillForm.form.valid) {
             let formValues = this.skillForm.form.value;
-            this.formError = '';
+            let skill: TSkill = this.parseSkill(formValues);
 
-            this.skillService.addSkill(formValues)
+            this.formError = '';
+            this.skillService.addSkill(skill)
             .then(resp => {
                 this.success.emit(true);
             })
@@ -36,5 +38,13 @@ export class NewSkillComponent implements OnInit {
                 this.formError = error.errorMessage;
             });
         }
+    }
+    parseSkill(formValues: any): TSkill {
+        return {
+            title: formValues.basics.title,
+            description: formValues.basics.description,
+            price: Number(formValues.basics.price),
+            id: ''
+        } as TSkill;
     }
 }
