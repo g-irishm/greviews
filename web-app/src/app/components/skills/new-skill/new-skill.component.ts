@@ -44,7 +44,8 @@ export class NewSkillComponent implements OnInit {
             title: formValues.basics.title,
             description: formValues.basics.description,
             price: Number(formValues.basics.price),
-            id: ''
+            id: '',
+            createdAt: new Date().toISOString()
         } as TSkill;
     }
 }

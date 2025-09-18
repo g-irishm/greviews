@@ -3,4 +3,5 @@ export type TSkill = {
     id: string;
     description: string;
     price: number;
+    createdAt: string;
 }

@@ -1,12 +1,15 @@
 import { Injectable } from '@angular/core';
 import { TSkill } from 'types/skill/TSkill';
+import { DbService } from '../global/db.service';
 
 @Injectable({
     providedIn: 'root'
 })
 export class SkillsService {
 
-    constructor() { }
+    constructor(
+        private DbService: DbService
+    ) { }
 
     // get all existing listings of user
     getAllListings() {
@@ -18,8 +21,13 @@ export class SkillsService {
         return new Promise((resolve, reject) => {
             // Simulate API call or Firebase logic here
             if (skillData && skillData.title) {
-                // Simulate success
-                resolve({ message: 'Skill added successfully' });
+                let path = this.DbService.getSkillPath();
+                let generatedID = path.split('/').pop() || '';
+                skillData.id = generatedID;
+
+                this.DbService.writeData(path + generatedID, skillData)
+                    .then(() => resolve({ message: 'Skill added successfully' }))
+                    .catch((error) => reject({ errorMessage: 'Error adding skill: ' + error }));
             } else {
                 // Simulate error
                 reject({ errorMessage: 'Skill data is invalid or missing title.' });
