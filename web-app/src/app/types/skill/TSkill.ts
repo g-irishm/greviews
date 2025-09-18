@@ -4,4 +4,5 @@ export type TSkill = {
     description: string;
     price: number;
     createdAt: string;
+    status: 'active' | 'inactive' | 'pending';
 }
