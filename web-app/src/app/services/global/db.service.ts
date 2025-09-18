@@ -22,7 +22,7 @@ export class DbService {
         });
     }
 
-    getSkillPath(): String {
+    getSkillPath(): string {
         const auth = getAuth();
         if (!auth.currentUser) {
             console.error("User is not logged in");

@@ -22,12 +22,10 @@ export class SkillsService {
             // Simulate API call or Firebase logic here
             if (skillData && skillData.title) {
                 let path = this.DbService.getSkillPath();
-                let generatedID = path.split('/').pop() || '';
-                skillData.id = generatedID;
 
-                this.DbService.writeData(path + generatedID, skillData)
+                this.DbService.writeData(path, skillData)
                     .then(() => resolve({ message: 'Skill added successfully' }))
-                    .catch((error) => reject({ errorMessage: 'Error adding skill: ' + error }));
+                    .catch((error) => reject({ errorMessage: 'Error adding skill'}));
             } else {
                 // Simulate error
                 reject({ errorMessage: 'Skill data is invalid or missing title.' });

@@ -40,12 +40,14 @@ export class NewSkillComponent implements OnInit {
         }
     }
     parseSkill(formValues: any): TSkill {
+        let timestamp = new Date().toISOString();
+
         return {
             title: formValues.basics.title,
             description: formValues.basics.description,
             price: Number(formValues.basics.price),
-            id: '',
-            createdAt: new Date().toISOString()
+            id: timestamp.replace(/[^0-9]/g, ''),
+            createdAt: timestamp
         } as TSkill;
     }
 }
