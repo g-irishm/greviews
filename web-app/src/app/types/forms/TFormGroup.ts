@@ -1,7 +1,11 @@
-import { TCheckoutbox, TDate, TEmail, TFile, TImage, TNumber, TPassword, TSelect, TTel, TText, TUrl } from './elements';
+import { ValidatorFn } from '@angular/forms';
+import { TElement } from './TElement';
 
 
 export type TFormGroup = {
     name: string;
-    elements: Array<TCheckoutbox | TDate | TEmail | TFile | TImage | TNumber | TPassword | TSelect | TTel | TText | TUrl>;
+    title: string;
+    id: string;
+    elements: TElement
+    validations: Array<ValidatorFn>;
 }

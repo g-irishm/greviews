@@ -1,22 +1,27 @@
 <form [formGroup]='this.skillForm.form' (ngSubmit)='addSkill()'>
     <div class='error'>{{this.formError}}</div>
-    <ng-container *ngFor='let elm of this.skillForm.formGroup.elements'>
-        <div class='form-elm'>
-            <label>{{elm.label}}
-                <span *ngIf='elm.mandatory' class='alert'>*</span>
-            </label>
-            <div>
-                <input [type]='elm.type' [name]='elm.name' [placeholder]='elm.placeholder' [formControlName]='elm.id'>
-                <div *ngIf='elm.name !== "confirmedPassword"
-                    && this.skillForm.form.get(elm.id)?.invalid
-                    && this.skillForm.form.get(elm.id)?.touched' class='error'>
-                    Invalid {{elm.label}}
-                </div>
-                <div *ngIf="this.skillForm.form.get(elm.id)?.errors?.InvalidPriceFormat" class='error'>
-                    Decimal not allowed.
-                </div>
+    <ng-container *ngFor='let group of this.skillForm.formBuilder.groups; index as groupIndex'>
+        <form [formGroup]='this.skillForm.form'>
+            <div [formGroupName]="group.id">
+                <ng-container *ngFor='let elm of group.elements'>
+                    <div class='form-elm'>
+                        <label>{{elm.label}}
+                            <span *ngIf='elm.mandatory' class='alert'>*</span>
+                        </label>
+                        <div>
+                            <input [type]='elm.type' [name]='elm.name' [placeholder]='elm.placeholder' [formControlName]='elm.id'>
+                            <div *ngIf='this.skillForm.form.controls[group.id].get(elm.id)?.invalid
+                                && this.skillForm.form.controls[group.id].get(elm.id)?.touched' class='error'>
+                                Invalid {{elm.label}}
+                            </div>
+                            <div *ngIf="this.skillForm.form.controls[group.id].get(elm.id)?.errors?.InvalidPriceFormat" class='error'>
+                                Decimal not allowed.
+                            </div>
+                        </div>
+                    </div>
+                </ng-container>
             </div>
-        </div>
+        </form>
     </ng-container>
-    <button type='submit' class='btn signup'>Add</button>
+    <button type='button' class='btn addSkill' (click)="addSkill()">Add</button>
 </form>

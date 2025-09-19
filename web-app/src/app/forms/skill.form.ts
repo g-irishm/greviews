@@ -1,13 +1,13 @@
 import { BasicForm } from './basic.form';
-import { formConfig } from '../config/skillForm';
+import { FormBuilder } from '../config/skillForm';
 
 export class SkillForm extends BasicForm {
 
     constructor(
         private title?: string | undefined,
         private description?: string | undefined,
-        private price?: string | undefined
+        private price?: number | undefined
     ) {
-        super(formConfig, { title, description, price });
+        super(FormBuilder, { title, description, price });
     }
 }

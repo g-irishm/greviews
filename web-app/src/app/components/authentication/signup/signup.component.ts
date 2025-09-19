@@ -24,7 +24,7 @@ export class SignupComponent implements OnInit {
 
     signup(): void {
         if (this.signupForm.form.valid) {
-            let formValues = this.signupForm.form.value;
+            let formValues = this.signupForm.form.value.signup;
             this.formError = '';
     
             this.loginService.signup(formValues.firstName, formValues.lastName, formValues.email, formValues.password)
@@ -34,7 +34,7 @@ export class SignupComponent implements OnInit {
             .catch(error => {
                 this.formError = error.errorMessage;
             });
-        } else if (this.signupForm.form.errors?.['PasswordMismatch']) {
+        } else if (this.signupForm.form.controls.signup.errors?.['PasswordMismatch']) {
             this.formError = 'Passwords do not match.'
         }else {
             this.formError = 'Please fill the correct details.'

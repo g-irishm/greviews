@@ -1,5 +1,8 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
 import { SkillForm } from 'src/app/forms/skill.form';
+import { SkillsService } from 'src/app/services/skills/skills.service';
+import { TSkill } from 'types/skill/TSkill';
 
 @Component({
     selector: 'app-new-skill',
@@ -12,7 +15,10 @@ export class NewSkillComponent implements OnInit {
     skillForm: SkillForm;
     formError: string;
 
-    constructor( ) {
+    constructor(
+        private skillService: SkillsService,
+        private router: Router
+    ) {
         this.skillForm = new SkillForm();
         this.formError = '';
     }
@@ -21,6 +27,33 @@ export class NewSkillComponent implements OnInit {
     }
 
     addSkill(): void {
-        
+        if (this.skillForm.form.valid) {
+            let formValues = this.skillForm.form.value;
+            let skill: TSkill = this.parseSkill(formValues);
+
+            this.formError = '';
+            this.skillService.addSkill(skill)
+            .then(resp => {
+                this.success.emit(true);
+                this.skillForm.form.reset();
+                this.formError = '';
+                this.router.navigateByUrl('/skills');
+            })
+            .catch(error => {
+                this.formError = error.errorMessage;
+            });
+        }
+    }
+    parseSkill(formValues: any): TSkill {
+        let timestamp = new Date().toISOString();
+
+        return {
+            title: formValues.basics.title,
+            description: formValues.basics.description,
+            price: Number(formValues.basics.price),
+            id: timestamp.replace(/[^0-9]/g, ''),
+            createdAt: timestamp,
+            status: 'pending'
+        } as TSkill;
     }
 }

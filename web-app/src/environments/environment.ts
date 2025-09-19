@@ -9,7 +9,7 @@ export const environment = {
         authDomain: "greviews-dev.firebaseapp.com",
         databaseURL: "https://greviews-dev-default-rtdb.firebaseio.com",
         projectId: "greviews-dev",
-        storageBucket: "greviews-dev.appspot.com",
+        storageBucket: "greviews-dev.firebasestorage.app",
         messagingSenderId: "714990806231",
         appId: "1:714990806231:web:f32d36114072d5fa8ebc92",
         measurementId: "G-4Y7THK0WS5"

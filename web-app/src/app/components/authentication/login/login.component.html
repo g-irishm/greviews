@@ -1,13 +1,20 @@
 <form [formGroup]='this.loginForm.form' (ngSubmit)='login()'>
     <div class='error'>{{this.formError}}</div>
-    <ng-container *ngFor='let elm of this.loginForm.formGroup.elements'>
-        <div class='form-elm'>
-            <label>{{elm.label}}</label>
-            <input [type]='elm.type' [name]='elm.name' [placeholder]='elm.placeholder' [formControlName]='elm.id'>
-            <div *ngIf="this.loginForm.form.get(elm.id)?.invalid && this.loginForm.form.get(elm.id)?.touched" class="error">
-                Invalid {{elm.label}}
+    <ng-container *ngFor='let group of this.loginForm.formBuilder.groups; index as groupIndex'>
+        <form [formGroup]='this.loginForm.form'>
+            <div [formGroupName]="group.id">
+                <ng-container *ngFor='let elm of group.elements'>
+                    <div class='form-elm'>
+                        <label>{{elm.label}}</label>
+                        <input [type]='elm.type' [name]='elm.name' [placeholder]='elm.placeholder' [formControlName]='elm.id'>
+                        <div *ngIf='this.loginForm.form.controls[group.id].get(elm.id)?.invalid
+                            && this.loginForm.form.controls[group.id].get(elm.id)?.touched' class='error'>
+                            Invalid {{elm.label}}
+                        </div>
+                    </div>
+                </ng-container>
             </div>
-        </div>
+        </form>
     </ng-container>
     <div class='forgot-password'>
         <a href='' >Forgot Password</a>
